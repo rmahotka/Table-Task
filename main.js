@@ -1,18 +1,19 @@
 import './style.css'
 import ok from '/ok.svg'
 import no from '/no.svg'
+import { tableSearch } from './JS/sortTable'
 const app = document.querySelector('#app')
 
 const theadTable = `
   <thead>
     <tr>
-      <th>ID</th>
-      <th>Название</th>
-      <th>Описание</th>
-      <th>Цена</th>
-      <th>Количество на складе</th>
-      <th>Цвет</th>
-      <th>В наличии</th>
+      <th data-type="number">ID</th>
+      <th data-type="string">Название</th>
+      <th data-type="string">Описание</th>
+      <th data-type="number">Цена</th>
+      <th data-type="number">Количество на складе</th>
+      <th data-type="string">Цвет</th>
+      <th data-type="number">В наличии</th>
     </tr>
   </thead>
 `
@@ -56,3 +57,4 @@ async function fetchData() {
 
 
 await fetchData()
+tableSearch()
